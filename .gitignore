@@ -1,0 +1,4 @@
+*.csv
+__init__.py
+*.pyc
+local_settings.py

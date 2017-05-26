@@ -1,0 +1,7 @@
+# -*- coding: utf-8 -*-
+
+OAUTH_TOKEN = <your_github_token>
+
+Q_PARAM = '&q=is%3Aissue%20closed%3A>%3D2017-05-01'
+
+REPOS = ['NayaraCaetano/githubIssues2CSV']
