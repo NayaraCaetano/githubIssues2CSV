@@ -43,12 +43,12 @@ def get_issues(url, projeto):
     return list_return
 
 
-def dict_to_csv(somedict, csv_file):
+def dict_to_csv(some_dict, csv_file):
     with open(csv_file, 'wb') as f:
         w = csv.writer(f)
-        w.writerow(somedict[0].keys())
+        w.writerow(some_dict[0].keys())
 
-        for line in somedict:
+        for line in some_dict:
             w.writerow(line.values())
 
 
