@@ -13,7 +13,7 @@ AUTENTICATED_URL = BASE_URL + '?access_token=' + local_settings.OAUTH_TOKEN
 
 
 def main():
-    params_defautl = '&per_page=100' + local_settings.Q_PARAM
+    params_defautl = '&per_page=100&sort=updated&order=asc' + local_settings.Q_PARAM
 
     result = []
     for repo in local_settings.REPOS:
