@@ -9,7 +9,6 @@ from datetime import datetime
 
 
 BASE_URL = 'https://api.github.com/search/issues'
-AUTENTICATED_URL = BASE_URL + '?access_token=' + local_settings.OAUTH_TOKEN
 
 
 def main():
@@ -17,7 +16,10 @@ def main():
 
     result = []
     for repo in local_settings.REPOS:
-        result += get_issues(AUTENTICATED_URL + params_defautl + '%20repo:' + repo, repo)
+        result += get_issues(
+            authenticated_url(repo['oauth_token']) + params_defautl + '%20repo:' + repo['repo'],
+            repo['repo']
+        )
 
     print(str(len(result)) + ' issues imported')
 
@@ -51,5 +53,8 @@ def dict_to_csv(some_dict, csv_file):
         for line in some_dict:
             w.writerow(line.values())
 
+
+def authenticated_url(token):
+    return BASE_URL + '?access_token=' + token
 
 main()
